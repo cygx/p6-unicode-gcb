@@ -31,21 +31,18 @@ my enum _ (
 
 my constant COUNT = +_::;
 my constant RANGE = ^COUNT;
-my constant TABLE = do {
-    my @table[COUNT;COUNT] = (True xx COUNT) xx COUNT;
-    @table[CR;LF] = False;
-    @table[L;$_] = False for L, V, LV, LVT;
-    @table[$_;T] = False for V, T, LV, LVT;
-    @table[$_;V] = False for V, LV;
-    @table[$_;Extend] = False for RANGE;
-    @table[$_;ZWJ] = False for RANGE;
-    @table[$_;SpacingMark] = False for RANGE;
-    @table[Prepend;$_] = False for RANGE;
-    @table[$_;E_Modifier] = False for E_Base, E_Base_GAZ, Extend;
-    @table[ZWJ;$_] for Glue_After_Zwj, E_Base_GAZ;
-    @table[Regional_Indicator;Regional_Indicator] = False;
-    @table;
-}
+my \TABLE = my @[COUNT;COUNT] = (True xx COUNT) xx COUNT;
+TABLE[CR;LF] = False;
+TABLE[L;$_] = False for L, V, LV, LVT;
+TABLE[$_;T] = False for V, T, LV, LVT;
+TABLE[$_;V] = False for V, LV;
+TABLE[$_;Extend] = False for RANGE;
+TABLE[$_;ZWJ] = False for RANGE;
+TABLE[$_;SpacingMark] = False for RANGE;
+TABLE[Prepend;$_] = False for RANGE;
+TABLE[$_;E_Modifier] = False for E_Base, E_Base_GAZ, Extend;
+TABLE[ZWJ;$_] for Glue_After_Zwj, E_Base_GAZ;
+TABLE[Regional_Indicator;Regional_Indicator] = False;
 
 our sub is-break(uint32 \a, uint32 \b) {
     TABLE[getprop(a);getprop(b)];
