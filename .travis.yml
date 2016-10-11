@@ -12,4 +12,4 @@ install:
   - rakudobrew build-panda
   - panda install cygx/p6-unicode-gcb
 script:
-  - perl6 -MUnicode::GCB -e 'say Unicode::GCB::clusters("Umlaute: ä, ö, ü".NFD)'
+  - perl6 -MUnicode::GCB -e 'say Unicode::GCB::clusters("äöü".NFD)'
