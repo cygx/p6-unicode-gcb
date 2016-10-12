@@ -37,18 +37,42 @@ my class GCB is export {
     my constant ALWAYS = (for ^COUNT -> \a {
         slip (for ^COUNT -> \b {
             given \(a, b) {
-                when :(CR, LF) { False }
-                when :($ where Control|CR|LF, $) { True }
-                when :($, $ where Control|CR|LF) { True }
-                when :(L, $ where L|V|LV|LVT) { False }
-                when :($ where LV|V, $ where V|T) { False }
-                when :($ where LVT|T, T) { False }
-                when :($, $ where Extend|ZWJ) { False }
-                when :($, SpacingMark) { False }
-                when :(Prepend, $) { False }
-                when :($ where E_Base|E_Base_GAZ|Extend, E_Modifier) { False }
-                when :(ZWJ, $ where Glue_After_Zwj|E_Base_GAZ) { False }
-                when :(Regional_Indicator, Regional_Indicator) { False }
+                when :($ where CR,
+                       $ where LF) { False }
+
+                when :($ where Control|CR|LF,
+                       $) { True }
+
+                when :($,
+                       $ where Control|CR|LF) { True }
+
+                when :($ where L,
+                       $ where L|V|LV|LVT) { False }
+
+                when :($ where LV|V,
+                       $ where V|T) { False }
+
+                when :($ where LVT|T,
+                       $ where T) { False }
+
+                when :($,
+                       $ where Extend|ZWJ) { False }
+
+                when :($,
+                       $ where SpacingMark) { False }
+
+                when :($ where Prepend,
+                       $) { False }
+
+                when :($ where E_Base|E_Base_GAZ|Extend,
+                       $ where E_Modifier) { False }
+
+                when :($ where ZWJ,
+                       $ where Glue_After_Zwj|E_Base_GAZ) { False }
+
+                when :($ where Regional_Indicator,
+                       $ where Regional_Indicator) { False }
+
                 default { True }
             }
         });
