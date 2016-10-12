@@ -11,6 +11,7 @@ Unicode grapheme cluster boundary detection
     say GCB.maybe(
         "\c[REGIONAL INDICATOR SYMBOL LETTER G]".ord,
         "\c[REGIONAL INDICATOR SYMBOL LETTER B]".ord);
+
     say GCB.clusters("äöü".NFD);
 ```
 
@@ -46,9 +47,9 @@ Copyright (C) 2016 by <cygx@cpan.org>
 
 Distributed under the [Boost Software License, Version 1.0][5]
 
-[1] https://travis-ci.org/cygx/p6-unicode-gcb.svg?branch=master
-[2] https://travis-ci.org/cygx/p6-unicode-gcb
-[3] https://github.com/cygx/p6-unicode-gcb
-[4] https://github.com/cygx/p6-unicode-gcb/issues
-[5] http://www.boost.org/LICENSE_1_0.txt
-[6] http://www.unicode.org/reports/tr29/tr29-29.html#Grapheme_Cluster_Boundary_Rules
+[1]: https://travis-ci.org/cygx/p6-unicode-gcb.svg?branch=master
+[2]: https://travis-ci.org/cygx/p6-unicode-gcb
+[3]: https://github.com/cygx/p6-unicode-gcb
+[4]: https://github.com/cygx/p6-unicode-gcb/issues
+[5]: http://www.boost.org/LICENSE_1_0.txt
+[6]: http://www.unicode.org/reports/tr29/tr29-29.html#Grapheme_Cluster_Boundary_Rules
