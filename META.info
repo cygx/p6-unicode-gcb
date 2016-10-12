@@ -1,6 +1,6 @@
 {
     "name" : "Unicode::GCB",
-    "version" : "0.1.0",
+    "version" : "0.2.0",
     "description" : "An implementation of the Unicode Grapheme Cluster Boundary algorithm",
     "author" : "cygx <cygx@cpan.org>",
     "provides" : { "Unicode::GCB" : "lib/Unicode/GCB.pm6" },
