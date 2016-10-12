@@ -1,13 +1,16 @@
 {
-    "name" : "Unicode::GCB",
-    "version" : "0.2.0",
-    "description" : "An implementation of the Unicode Grapheme Cluster Boundary algorithm",
-    "author" : "cygx <cygx@cpan.org>",
-    "provides" : { "Unicode::GCB" : "lib/Unicode/GCB.pm6" },
-    "depends" : [ ],
-    "support" : {
-        "bugtracker" : "https://github.com/cygx/p6-unicode-gcb/issues",
-        "source" : "https://github.com/cygx/p6-unicode-gcb"
+    "perl"        : "6.c",
+    "name"        : "Unicode::GCB",
+    "description" : "Unicode grapheme cluster boundary detection",
+    "version"     : "0.2.1",
+    "authors"     : [ "github:cygx" ],
+    "license"     : "http://boost.org/LICENSE_1_0.txt",
+    "source-url"  : "git://github.com/cygx/p6-unicode-gcb.git",
+    "provides"    : {
+        "Unicode::GCB" : "lib/Unicode/GCB.pm6"
     },
-    "source-url" : "git://github.com/cygx/p6-unicode-gcb.git"
+    "support"     : {
+        "bugtracker" : "https://github.com/cygx/p6-unicode-gcb/issues",
+        "source"     : "https://github.com/cygx/p6-unicode-gcb/tree/v0.2.1"
+    },
 }
