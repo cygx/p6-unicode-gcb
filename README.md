@@ -7,11 +7,11 @@ An implementation of the Unicode Grapheme Cluster Boundary algorithm
 ```
     use Unicode::GCB;
 
-    say Unicode::GCB::is-break(0x600, 0x30);
-    say Unicode::GCB::is-maybe-break(
+    say GCB.always(0x600, 0x30);
+    say GCB.maybe(
         "\c[REGIONAL INDICATOR SYMBOL LETTER G]".ord,
         "\c[REGIONAL INDICATOR SYMBOL LETTER B]".ord);
-    say Unicode::GCB::clusters("Umlaute: ä, ö, ü".NFD);
+    say GCB.clusters("äöü".NFD);
 ```
 
 # Description
