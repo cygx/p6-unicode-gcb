@@ -17,7 +17,7 @@ Unicode grapheme cluster boundary detection
 
 # Description
 
-Implements the Unicode 9.0 [grapheme cluster boundary rules][6].
+Implements the [Unicode 9.0 grapheme cluster boundary rules][6] or [Unicode 11.0 grapheme cluster boundary rules][7] depending on the Rakudo version in use.
 
 In contrast to earlier versions of the standard, it is no longer possible
 to unambiguously decide if there's a cluster break between two Unicode
@@ -26,7 +26,7 @@ characters by looking at just these two characters.
 In particular, there's a break between a pair of regional indicator symbols
 only if the first symbol has already been paired up with another indicator
 and there's no break between extension characters and emoji modifiers if the 
-current cluster forms an emoji sequence.
+current cluster forms an emoji sequence. *[FIXME: Unicode 11.0 rules]*
 
 Therefore, the module provides two different methods `GCB.always()` and
 `GCB.maybe()` which both expect two Unicode codepoints as arguments.
@@ -47,9 +47,11 @@ Copyright (C) 2016 by <cygx@cpan.org>
 
 Distributed under the [Boost Software License, Version 1.0][5]
 
+
 [1]: https://travis-ci.org/cygx/p6-unicode-gcb.svg?branch=master
 [2]: https://travis-ci.org/cygx/p6-unicode-gcb
 [3]: https://github.com/cygx/p6-unicode-gcb
 [4]: https://github.com/cygx/p6-unicode-gcb/issues
 [5]: http://www.boost.org/LICENSE_1_0.txt
 [6]: http://www.unicode.org/reports/tr29/tr29-29.html#Grapheme_Cluster_Boundary_Rules
+[7]: http://www.unicode.org/reports/tr29/tr29-33.html#Grapheme_Cluster_Boundary_Rules
