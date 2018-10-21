@@ -67,7 +67,6 @@ my constant @ALWAYS = (for ^$N -> $a {
                    $ where LF) { False }
 
             when :($ where Control|CR|LF,
- 
                    $) { True }
 
             when :($,
@@ -139,7 +138,7 @@ my class GCB is export {
     }
 
     multi method clusters(Uni \uni, :$props!) {
-        self.clusters(uni)>>.map: { self.property($_) };
+        self.clusters(uni)>>.map: &typeof;
     }
 
     multi method clusters(Uni \uni, :$strings!) {
